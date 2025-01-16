@@ -53,6 +53,21 @@ data "aws_iam_policy_document" "developer_policy" {
     ]
     resources = ["arn:aws:lambda:*:*:*"]
   }
+
+  # CloudWatch permissions
+  statement {
+    effect = "Allow"
+    actions = [
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents",
+      "logs:DescribeLogGroups",
+      "logs:DescribeLogStreams",
+      "logs:GetLogEvents",
+      "logs:FilterLogEvents"
+    ]
+    resources = ["arn:aws:logs:*:*:*"]
+  }
 }
 
 # Create the policy

@@ -1,7 +1,7 @@
 variable "developer_users" {
   description = "List of developer usernames to create"
   type        = list(string)
-  default     = ["ricardo"]
+  default     = ["ricardo", "jorge"]
 }
 
 variable "developers_group_name" {
